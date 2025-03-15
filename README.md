@@ -1,63 +1,68 @@
-🖐️ Hand Gesture Controlled Volume and Servo Motor
-This project uses a Python script with OpenCV and MediaPipe to track hand gestures and control system volume. It also integrates Arduino to move a servo motor based on detected gestures.
-✨ Features
+🎛️ Hand Gesture Volume Control ✋
+📌 Description
+This project uses computer vision and hand tracking to control your system's volume based on hand gestures. It employs OpenCV, MediaPipe, and the ctypes library for interacting with system volume controls.
+The program tracks your hand through the webcam, detecting the distance between your thumb and index fingertip. Based on this distance:
 
-🖐️ Hand gesture detection using Python (OpenCV + MediaPipe)
-🔊 Volume control by pinching thumb and index finger
-🔧 Arduino Uno controls a servo motor based on hand gesture detection
+🤏 Close thumb and index finger: Decrease volume
+✋ Spread thumb and index finger apart: Increase volume
 
-🔧 Requirements
-🐍 Python Environment
+🌟 Features
 
-Python 3.7 or later
-OpenCV 📸
-MediaPipe 🤚
-NumPy 🔢
-PySerial 🔌
+🖐️ Real-time hand tracking using MediaPipe.
+🔊 Dynamic volume control with hand gestures.
+📺 Visual feedback showing volume percentage.
+⏳ Safety cooldown to prevent rapid unintended volume changes.
 
-Install requirements using:
-pip install opencv-python mediapipe numpy pyserial
+🛠️ Requirements
 
-🛠️ Arduino Setup
+🐍 Python 3.8 or later
+📷 OpenCV (cv2)
+🖥️ MediaPipe
+🔧 NumPy
+🪟 Windows OS (for ctypes volume control)
 
-🛠️ Arduino Uno
-🔄 Servo motor
-🔌 USB cable
-💡 Arduino IDE
-
-🛠️ Setup
-🖥️ Python Script Setup
+🔧 Installation
 
 
 Clone the repository:
 git clone https://github.com/zo-n-ok/volume_control_by_HandGesture.git
-cd HandGestureVolumeServo
+cd hand-gesture-volume-control
 
 
 
-Run the Python script:
-python hand_tracker.py
+Install required packages:
+pip install opencv-python mediapipe numpy
 
 
 
-🔧 Arduino Setup
+🚀 Usage
 
-Open Arduino IDE and upload the Arduino script (e.g., servo_control.ino).
-Select the correct board and port in Tools > Board and Tools > Port.
-Upload the code to the Arduino Uno.
+Run the script:
+python hand_volume_control.py
 
-🎯 Usage
 
-🔊 Volume Up: Pinch thumb and index finger apart.
-🔉 Volume Down: Bring thumb and index finger close.
-🔄 Servo Control: The Arduino script reads signals from the Python script to rotate the servo motor based on gesture detection.
+Ensure your webcam is connected and accessible.
+Perform gestures:
 
-🛠️ Troubleshooting
+🤏 Thumb and index finger close together: Volume down
+✋ Thumb and index finger far apart: Volume up
 
-✅ Ensure the correct COM port is selected in both Python and Arduino.
-🎥 If the camera doesn't start, check your webcam permissions.
-🔄 If the servo doesn’t move, verify Arduino connections and script upload.
 
-📄 License
-This project is open-source under the MIT License.
-Happy coding! 🚀
+Press 'q' to quit the program.
+
+🔍 Troubleshooting
+
+❗ If the camera doesn’t start, ensure no other applications are using the webcam.
+💡 If hand detection fails, ensure good lighting and place your hand clearly in view.
+🛠️ The volume control may only work on Windows due to ctypes.windll.user32 usage.
+
+🔮 Future Improvements
+
+🖐️ Add multi-hand support.
+💻 Implement cross-platform volume control.
+🎯 Fine-tune gesture recognition for smoother control.
+
+📝 License
+This project is open-source and available under the MIT License.
+
+🎧 Happy volume controlling! ✋
