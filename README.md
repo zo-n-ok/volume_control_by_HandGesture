@@ -30,7 +30,7 @@ pip install opencv-python mediapipe numpy pyserial
 
 
 Clone the repository:
-git clone https://github.com/yourusername/HandGestureVolumeServo.git
+git clone https://github.com/zo-n-ok/volume_control_by_HandGesture.git
 cd HandGestureVolumeServo
 
 
